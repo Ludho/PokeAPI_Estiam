@@ -19,7 +19,6 @@ const Pokemons = () => {
           })
           .then((data)=>{
             setData(data);
-            console.log(data)
             setLoading(false);
       
           })
@@ -35,7 +34,6 @@ const Pokemons = () => {
     
   
     const handleChange = (e) => {
-        console.log(e.target.value)
         setFilter(e.target.value);
     };
   
@@ -50,7 +48,7 @@ const Pokemons = () => {
   
     return (
       <>
-        <h1>Pokédex</h1>
+        <h1>Pokédex</h1> 
         <div className="pokedex-container">
         <Form handleChange={handleChange}></Form>
           {isLoading ? (

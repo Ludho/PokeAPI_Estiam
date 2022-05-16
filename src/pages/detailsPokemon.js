@@ -1,8 +1,10 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
-import PokemonInfo from "../components/pokemon-info/pokemonInfo"
-import PokemonImg from "../components/pokemon-info/pokemonImg"
+import axios from 'axios';
+import PokemonInfo from "../components/pokemons/PokemonInfo"
+import PokemonImg from "../components/pokemons/PokemonImg"
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const DetailsPokemon = () => {
     const [isLoading, setLoading] = useState(true);
@@ -13,9 +15,10 @@ const DetailsPokemon = () => {
 
     const fetchApi = async () => {
       try {
-        fetch(
+        axios.get(
             process.env.REACT_APP_LOCALAPI+"/pokemons/"+id
         ).then(response => {
+            console.log(response)
             return response.json();
           })
           .then((data)=>{
@@ -42,14 +45,14 @@ const DetailsPokemon = () => {
   
     return (
       <>
-        {data &&
-        <>
-            <PokemonImg props={data}/>
-            <PokemonInfo props={data}/>
-        </>
-        }
-
-
+          {isLoading ? (
+            <PacmanLoader />
+          ) : (
+            <>
+              <PokemonImg props={data}/>
+              <PokemonInfo props={data}/>
+            </>
+          )}
       </>
     );
   };

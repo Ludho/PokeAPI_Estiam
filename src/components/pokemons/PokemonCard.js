@@ -7,18 +7,22 @@ const PokemonCard = ({props}) =>  {
 
     
     return <>
-    <div className="d-flex justify-content-center col-md-2 col-sm-3">
-        <NavLink to={`${props.pokemon.id}`}>
+    <div className='col-md-2 col-sm-3 col-6'>
+    <NavLink to={`${props.pokemon.id}`}>
+        <div className="justify-content-center align-items-center">
+            
 
-        <LazyLoadImage
-            alt={props.pokemon.name.english}
-            src={process.env.REACT_APP_LOCALAPI+`/Asset/${(props.pokemon.id).toString().padStart(3, "0")}.png`}
-            width={90} 
-            height={90} 
-        />
-            <h2>{props.pokemon.name.english}</h2>
+            <LazyLoadImage
+                alt={props.pokemon.name.english}
+                src={process.env.REACT_APP_LOCALAPI+`/Asset/${(props.pokemon.id).toString().padStart(3, "0")}.png`}
+                className="img-fluid"
+                style={{padding:"10px"}}
+            />
+                <h2 className="text-center">{props.pokemon.name.english}</h2>
 
-        </NavLink>
+            
+        </div>
+    </NavLink>
     </div>
     </>
 
