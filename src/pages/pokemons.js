@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Form from "../components/utils/Form"
 import PokemonList from "../components/pokemons/PokemonList";
 import PacmanLoader from "react-spinners/PacmanLoader";
+import axios from 'axios';
 
 
 const Pokemons = () => {
@@ -12,13 +13,11 @@ const Pokemons = () => {
     const [filter, setFilter] = useState("")
     const fetchApi = async () => {
       try {
-        fetch(
+        axios.get(
           process.env.REACT_APP_LOCALAPI+"/pokemons"
-        ).then(response => {
-            return response.json();
-          })
-          .then((data)=>{
-            setData(data);
+        ).then((response)=>{
+          console.log(response.data)
+            setData(response.data);
             setLoading(false);
       
           })

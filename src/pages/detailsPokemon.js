@@ -17,12 +17,8 @@ const DetailsPokemon = () => {
       try {
         axios.get(
             process.env.REACT_APP_LOCALAPI+"/pokemons/"+id
-        ).then(response => {
-            console.log(response)
-            return response.json();
-          })
-          .then((data)=>{
-            setData(data);
+        ).then((response)=>{
+            setData(response.data);
             setLoading(false);
       
           })

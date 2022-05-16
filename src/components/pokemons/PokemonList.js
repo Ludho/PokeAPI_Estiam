@@ -1,12 +1,12 @@
 import React from 'react';
-import PokemonCard from './PokemonCard';
+import PokemonBigCard from './PokemonBigCard';
 
 const PokemonList = ({ props }) =>  {
     const PokemonJSX = [];
     
     props.pokemons.forEach(pokemon => {
         PokemonJSX.push(
-            <PokemonCard key={pokemon.id} props={{pokemon:pokemon}}/>
+            <PokemonBigCard key={pokemon.id} props={{pokemon:pokemon}}/>
           );
     });
     

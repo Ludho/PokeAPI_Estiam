@@ -37,12 +37,5 @@ const PokemonInfo = ({ props }) => {
             </div>
         </section>
     </>
-
-// Attack: 62
-// Defense: 63
-// HP: 60
-// Sp. Attack: 80
-// Sp. Defense: 80
-// Speed: 60
 }
 export default PokemonInfo;
