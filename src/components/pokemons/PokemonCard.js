@@ -3,13 +3,13 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { NavLink  } from "react-router-dom";
 
 
-const PokemonCard = ({props}) =>  {
+const PokemonCard = ({props, handleClick}) =>  {
 
     
     return <>
-    <div className='col-md-2 col-sm-3 col-6'>
-    <NavLink to={`${props.pokemon.id}`}>
-        <div className="justify-content-center align-items-center">
+    <div className='col-md-2 col-sm-3 col-6' onClick={() => handleClick(props.pokemon)}>
+
+        <div className="text-center">
             
 
             <LazyLoadImage
@@ -22,7 +22,7 @@ const PokemonCard = ({props}) =>  {
 
             
         </div>
-    </NavLink>
+
     </div>
     </>
 

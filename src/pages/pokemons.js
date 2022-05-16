@@ -4,13 +4,16 @@ import Form from "../components/utils/Form"
 import PokemonList from "../components/pokemons/PokemonList";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 const Pokemons = () => {
+
+    let navigate = useNavigate();
     const [isLoading, setLoading] = useState(true);
     const [hasError, setError] = useState(false);
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState("")
+
     const fetchApi = async () => {
       try {
         axios.get(
@@ -41,7 +44,9 @@ const Pokemons = () => {
         return data.filter( (pkmn) => pkmn.name.english.toLowerCase().includes(filter.toLowerCase()))
     }
   
-
+    const handleClick = (pkmn) => {
+      navigate(`/pokemons/${pkmn.id}`);
+  };
   
     if (hasError) return <p>Une erreur est survenue...</p>;
   
@@ -53,7 +58,7 @@ const Pokemons = () => {
           {isLoading ? (
             <PacmanLoader />
           ) : (
-            <PokemonList props={{pokemons: constfilterData(data,filter)}} />
+            <PokemonList props={{pokemons: constfilterData(data,filter)}} handleClick={handleClick} />
           )}
         </div>
       </>

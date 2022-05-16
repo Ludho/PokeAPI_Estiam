@@ -1,12 +1,17 @@
 import React from 'react';
-import PokemonBigCard from './PokemonBigCard';
+import PokemonCard from './PokemonCard';
 
-const PokemonList = ({ props }) =>  {
+const PokemonList = ({ props, handleClick }) =>  {
     const PokemonJSX = [];
     
+    const handleClickChild=(pkmn)=>{
+        console.log("clickList")
+        handleClick(pkmn)
+    }
+
     props.pokemons.forEach(pokemon => {
         PokemonJSX.push(
-            <PokemonBigCard key={pokemon.id} props={{pokemon:pokemon}}/>
+            <PokemonCard key={pokemon.id} props={{pokemon:pokemon}} handleClick={handleClickChild}/>
           );
     });
     
