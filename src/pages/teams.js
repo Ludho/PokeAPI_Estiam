@@ -2,7 +2,6 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import TeamsList from "../components/teams/teamList";
 import PacmanLoader from "react-spinners/PacmanLoader";
-import { NavLink  } from "react-router-dom";
 import axios from 'axios';
 
 const Teams = () => {
@@ -35,8 +34,7 @@ const Teams = () => {
   
     return (
       <>
-        <h1>Pokemon Teams</h1>
-        <NavLink to={"create"}>+</NavLink>
+        <h1 className='text-center '><u>Pokemon Teams</u></h1>
         <div className="teams-container" style={{maxWidth:"70%", margin:"auto"}}>
           {isLoading ? (
             <PacmanLoader />

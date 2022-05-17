@@ -13,6 +13,30 @@
   }
 }
 
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    background-color: whitesmoke;
+}
+
+.pokemon-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    background-color: whitesmoke;
+}
+
+.pokemon-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    background-color: whitesmoke;
+}
+
+.svg:hover{
+
+    transform: translate3d(0px, -1px, 0px);
+
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

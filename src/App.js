@@ -11,19 +11,23 @@ import UpdateTeam from './pages/update-team'
 
 function App() {
   return (
-    <div className='container'>
+    
       <Router>
       <AppNavBar /> 
+      <div className='container'>
       <Routes>
+      
       <Route path='/' element={<Home/>}/>
         <Route path='/pokemons' element={<Pokemons/>}/>
         <Route path="/pokemons/:id" element={<DetailsPokemon/>} />
         <Route path="/teams" element={<Teams/>} />
         <Route path="/teams/create" element={<CreateTeam/>} />
         <Route path="/teams/update/:id" element={<UpdateTeam/>} />
+        
       </Routes>
+      </div>
     </Router>
-    </div>
+    
   );
 }
 

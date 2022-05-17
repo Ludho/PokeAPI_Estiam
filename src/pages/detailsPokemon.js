@@ -46,7 +46,7 @@ const DetailsPokemon = () => {
       ) : (
         <>
           <div className='container-fluid'>
-            <div className='row' style={{height:"75vh"}}>
+            <div className='row shadow' style={{height:"75vh",borderRadius:"20px"}}>
               <PokemonImg props={data} />
               <PokemonInfo props={data} />
             </div>

@@ -5,7 +5,6 @@ const PokemonList = ({ props, handleClick }) =>  {
     const PokemonJSX = [];
     
     const handleClickChild=(pkmn)=>{
-        console.log("clickList")
         handleClick(pkmn)
     }
 

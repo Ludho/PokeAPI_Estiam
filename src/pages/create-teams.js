@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ChoosePokemon from '../components/teams/ChoosePokemon';
 import PokemonList from '../components/pokemons/PokemonList';
+import {BiX} from "react-icons/bi";
+import Form from "../components/utils/Form"
+import {AiOutlinePlusCircle} from "react-icons/ai"
 
 const CreateTeam = () => {
 
@@ -21,7 +24,6 @@ const CreateTeam = () => {
         axios.get(
           process.env.REACT_APP_LOCALAPI+"/pokemons"
         ).then((response)=>{
-          console.log(response.data)
             setData(response.data);
       
           })
@@ -48,17 +50,28 @@ const CreateTeam = () => {
 
     }
 
-    const handleClick = (i) => {
+    const handlePick = (i) => {
         setIndex(i);
         setPick(true);
     }
+
+    const handleDelete = (e, i) => {
+      let tempData  = {...pokemons};
+      let tempArray = Object.keys(tempData).map(key => tempData[key]);
+      tempArray[i] = { id: 0}
+      setPokemons(tempArray);
+      e.stopPropagation(); 
+  }
 
     const handleChange = (e) => {
         setName(e.target.value);
     }
 
+    const handleChangeFilter = (e) => {
+      setFilter(e.target.value);
+  };
+
     const handleClickList = (pkmn) => {
-        console.log(pkmn)
         setPick(false)
         let tempData = pokemons;
         tempData[index] = {id:pkmn.id,name: pkmn.name.english}
@@ -68,13 +81,21 @@ const CreateTeam = () => {
     return (
         <>
             <div className='justify-content-center'>
-                <input maxlength="15" onChange={handleChange}></input>
-                <button onClick={createTeam}></button>
-                <ChoosePokemon props={{ pokemons: pokemons }} handleClick={handleClick} />
+                <div className='flex'>
+                  <input maxlength="15" placeholder='Team name' onChange={handleChange}></input>
+                  <AiOutlinePlusCircle className="svg" size={32} color="red" onClick={createTeam}/>
+                </div>
+                
+                
+                <ChoosePokemon props={{ pokemons: pokemons }} handlePick={handlePick} handleDelete={handleDelete}/>
             </div>
 
             {pick &&
-                <PokemonList props={{pokemons: constfilterData(data,filter)}} handleClick={handleClickList}/>
+                <>
+                  <BiX className="svg" size={20} onClick={()=>{setPick(false)}}/>
+                  <Form handleChange={handleChangeFilter}></Form>
+                  <PokemonList props={{pokemons: constfilterData(data,filter)}} handleClick={handleClickList}/>
+                </>
             }
         </>
 

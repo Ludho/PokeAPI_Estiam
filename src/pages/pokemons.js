@@ -19,7 +19,6 @@ const Pokemons = () => {
         axios.get(
           process.env.REACT_APP_LOCALAPI+"/pokemons"
         ).then((response)=>{
-          console.log(response.data)
             setData(response.data);
             setLoading(false);
       
