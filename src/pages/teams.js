@@ -36,8 +36,8 @@ const Teams = () => {
     return (
       <>
         <h1>Pokemon Teams</h1>
-        <NavLink to={"create-team"}>+</NavLink>
-        <div className="teams-container">
+        <NavLink to={"create"}>+</NavLink>
+        <div className="teams-container" style={{maxWidth:"70%", margin:"auto"}}>
           {isLoading ? (
             <PacmanLoader />
           ) : (

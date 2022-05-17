@@ -7,6 +7,7 @@ import DetailsPokemon from './pages/detailsPokemon';
 import Home from "./pages/home"
 import Teams from "./pages/teams"
 import CreateTeam from './pages/create-teams';
+import UpdateTeam from './pages/update-team'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path='/pokemons' element={<Pokemons/>}/>
         <Route path="/pokemons/:id" element={<DetailsPokemon/>} />
         <Route path="/teams" element={<Teams/>} />
-        <Route path="/teams/create-team" element={<CreateTeam/>} />
+        <Route path="/teams/create" element={<CreateTeam/>} />
+        <Route path="/teams/update/:id" element={<UpdateTeam/>} />
       </Routes>
     </Router>
     </div>

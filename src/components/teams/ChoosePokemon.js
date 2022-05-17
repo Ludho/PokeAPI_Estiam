@@ -3,9 +3,8 @@ import React from 'react';
 import UpdatePokemonCard from './UpdatePokemonCard';
 
 const ChoosePokemon = ({ props,handleClick }) => {
-
+    console.log("choose" + props)
     const PokemonsJSX = [];
-    
     for (let i = 0; i < 6; i++) {
         if (props.pokemons[i].id>0) {
             PokemonsJSX.push(

@@ -68,7 +68,7 @@ const CreateTeam = () => {
     return (
         <>
             <div className='justify-content-center'>
-                <input onChange={handleChange}></input>
+                <input maxlength="15" onChange={handleChange}></input>
                 <button onClick={createTeam}></button>
                 <ChoosePokemon props={{ pokemons: pokemons }} handleClick={handleClick} />
             </div>

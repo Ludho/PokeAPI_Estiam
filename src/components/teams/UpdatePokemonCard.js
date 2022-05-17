@@ -9,9 +9,9 @@ const UpdatePokemonCard = ({ props }) => {
                 alt={props.pokemon.name}
                 src={process.env.REACT_APP_LOCALAPI + `/Asset/${(props.pokemon.id).toString().padStart(3, "0")}.png`}
                 className="img-fluid"
-                style={{ padding: "10px" }}
+                style={{ padding: "10px",backgroundColor: "whitesmoke" }}
             />
-            <h2 className="text-center">{props.pokemon.name}</h2>
+            <p className="text-center h5">{props.pokemon.name}</p>
 
 
     </>

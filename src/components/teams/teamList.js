@@ -7,12 +7,15 @@ const TeamsList = ({ props }) =>  {
     props.teams.forEach(team => {
 
         TeamJSX.push(
-            <TeamCard key={team.id} props={{team:team}}/>
+        <>
+            
+            <TeamCard key={team.id} props={{team:team}}/>        
+        </>
           );
     });
     
     return <>
-        <div className="row">
+        <div className="row gx-3">
             {TeamJSX}
         </div>
     </>

@@ -16588,22 +16588,30 @@
   ],
   "teams": [
     {
-      "id": 1,
-      "name": "My first team",
+      "name": "default name",
       "pokemons": [
         {
-          "id": 1,
-          "name": "Bulbasaur"
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 4,
+          "name": "Charmander"
         },
         {
           "id": 5,
           "name": "Charmeleon"
         },
         {
-          "id": 16,
-          "name": "Pidgey"
+          "id": 0
         }
-      ]
+      ],
+      "id": 3
     },
     {
       "name": "TEST",
@@ -16611,9 +16619,49 @@
         {
           "id": 1,
           "name": "Bulbasaur"
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
         }
       ],
-      "id": 2
+      "id": 4
+    },
+    {
+      "name": "default name",
+      "pokemons": [
+        {
+          "id": 7,
+          "name": "Squirtle"
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        },
+        {
+          "id": 0
+        }
+      ],
+      "id": 5
     }
   ]
 }
