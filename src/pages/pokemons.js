@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Form from "../components/utils/Form"
 import PokemonList from "../components/pokemons/PokemonList";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
@@ -55,7 +55,9 @@ const Pokemons = () => {
         <div className="pokedex-container">
         <Form handleChange={handleChange}></Form>
           {isLoading ? (
-            <PacmanLoader />
+            <div className='d-flex align-items-center justify-content-center' style={{height:"50vh"}}>
+              <RiseLoader color="red" size={50}/>
+            </div>
           ) : (
             <PokemonList props={{pokemons: constfilterData(data,filter)}} handleClick={handleClick} />
           )}

@@ -60,6 +60,7 @@ const CreateTeam = () => {
       let tempArray = Object.keys(tempData).map(key => tempData[key]);
       tempArray[i] = { id: 0}
       setPokemons(tempArray);
+      setPick(false);
       e.stopPropagation(); 
   }
 
@@ -74,7 +75,7 @@ const CreateTeam = () => {
     const handleClickList = (pkmn) => {
         setPick(false)
         let tempData = pokemons;
-        tempData[index] = {id:pkmn.id,name: pkmn.name.english}
+        tempData[index] = {id:pkmn.id,name: pkmn.name.english,type:pkmn.type}
         setPokemons(tempData);
     }
 

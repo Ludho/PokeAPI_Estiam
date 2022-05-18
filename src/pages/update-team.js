@@ -5,13 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import ChoosePokemon from '../components/teams/ChoosePokemon';
 import PokemonList from '../components/pokemons/PokemonList';
 import { useParams } from "react-router-dom";
-import {BiX} from "react-icons/bi";
+import { BiX } from "react-icons/bi";
 import Form from "../components/utils/Form"
+import {MdCreate} from "react-icons/md"
+import {AiFillDelete} from "react-icons/ai"
 
 const UpdateTeam = () => {
 
     const navigate = useNavigate();
-    const [name, setName] = useState("default name");
+    const [name, setName] = useState("");
     const [pokemons, setPokemons] = useState([])
     const [pick, setPick] = useState(false)
     const [index, setIndex] = useState(null)
@@ -40,6 +42,7 @@ const UpdateTeam = () => {
             ).then((response) => {
                 setPokemons(response.data.pokemons);
                 setTeam(response.data)
+                setName(response.data.name)
             });
         } catch (err) {
             console.log(err)
@@ -72,12 +75,13 @@ const UpdateTeam = () => {
         setPick(true);
     }
 
-    const handleDelete = (e, i) => {
-        let tempData  = {...pokemons};
+    const handleDeletePick = (e, i) => {
+        let tempData = { ...pokemons };
         let tempArray = Object.keys(tempData).map(key => tempData[key]);
-        tempArray[i] = { id: 0}
+        tempArray[i] = { id: 0 }
         setPokemons(tempArray);
-        e.stopPropagation(); 
+        setPick(false);
+        e.stopPropagation();
     }
 
     const handleChangeFilter = (e) => {
@@ -91,7 +95,7 @@ const UpdateTeam = () => {
     const handleClickList = (pkmn) => {
         setPick(false)
         let tempData = pokemons;
-        tempData[index] = { id: pkmn.id, name: pkmn.name.english }
+        tempData[index] = { id: pkmn.id, name: pkmn.name.english, type: pkmn.type };
         setPokemons(tempData);
     }
 
@@ -99,12 +103,13 @@ const UpdateTeam = () => {
         <>
             {pokemons.length > 0 &&
                 <>
-                    <h2>{team.name}</h2>
-                    <button onClick={deleteTeam}>DELETE</button>
                     <div className='justify-content-center'>
-                        <input onChange={handleChange}></input>
-                        <button onClick={updateTeam}></button>
-                        <ChoosePokemon props={{ pokemons: pokemons }} handlePick={handlePick} handleDelete={handleDelete}/>
+                        <div className='' style={{margin:"10px 0 10px 0"}}>
+                            <input className="h3" maxlength="15" value={name} placeholder='Team name' onChange={handleChange}></input>
+                            <MdCreate className="svg" size={32} color="red" onClick={updateTeam} />
+                            <AiFillDelete className="svg " size={32} onClick={deleteTeam}/>
+                        </div>
+                        <ChoosePokemon props={{ pokemons: pokemons }} handlePick={handlePick} handleDelete={handleDeletePick} />
                     </div>
                 </>
 
@@ -112,7 +117,7 @@ const UpdateTeam = () => {
 
             {pick &&
                 <>
-                    <BiX className="svg" size={20} onClick={()=>{setPick(false)}}/>
+                    <BiX className="svg" size={20} onClick={() => { setPick(false) }} />
                     <Form handleChange={handleChangeFilter}></Form>
                     <PokemonList props={{ pokemons: constfilterData(data, filter) }} handleClick={handleClickList} />
                 </>

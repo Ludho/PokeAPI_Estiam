@@ -16591,66 +16591,28 @@
       "name": "default name",
       "pokemons": [
         {
-          "id": 0
-        },
-        {
           "id": 2,
-          "name": "Ivysaur"
+          "name": "Ivysaur",
+          "type": [
+            "Grass",
+            "Poison"
+          ]
         },
-        {
-          "id": 0
-        },
-        {
-          "id": 4,
-          "name": "Charmander"
-        },
-        {
-          "id": 5,
-          "name": "Charmeleon"
-        },
-        {
-          "id": 0
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "TEST",
-      "pokemons": [
         {
           "id": 1,
-          "name": "Bulbasaur"
+          "name": "Bulbasaur",
+          "type": [
+            "Grass",
+            "Poison"
+          ]
         },
         {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        }
-      ],
-      "id": 4
-    },
-    {
-      "name": "default name",
-      "pokemons": [
-        {
-          "id": 7,
-          "name": "Squirtle"
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
+          "id": 3,
+          "name": "Venusaur",
+          "type": [
+            "Grass",
+            "Poison"
+          ]
         },
         {
           "id": 0
@@ -16662,32 +16624,7 @@
           "id": 0
         }
       ],
-      "id": 5
-    },
-    {
-      "name": "nom",
-      "pokemons": [
-        {
-          "id": 1,
-          "name": "Bulbasaur"
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        }
-      ],
-      "id": 6
+      "id": 1
     }
   ]
 }

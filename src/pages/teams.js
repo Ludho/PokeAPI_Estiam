@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import TeamsList from "../components/teams/teamList";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 import axios from 'axios';
 
 const Teams = () => {
@@ -37,7 +37,9 @@ const Teams = () => {
         <h1 className='text-center '><u>Pokemon Teams</u></h1>
         <div className="teams-container" style={{maxWidth:"70%", margin:"auto"}}>
           {isLoading ? (
-            <PacmanLoader />
+            <div className='d-flex align-items-center justify-content-center' style={{height:"50vh"}}>
+              <RiseLoader color="red" size={50}/>
+            </div>
           ) : (
             <TeamsList props={{teams:data}} />
           )}
