@@ -8,6 +8,7 @@ import Home from "./pages/home"
 import Teams from "./pages/teams"
 import CreateTeam from './pages/create-teams';
 import UpdateTeam from './pages/update-team'
+import FormPokemon from './pages/forms-pokemon';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route path='/' element={<Home/>}/>
         <Route path='/pokemons' element={<Pokemons/>}/>
         <Route path="/pokemons/:id" element={<DetailsPokemon/>} />
+        <Route path="/pokemons/update/:id" element={<FormPokemon props={{req:"update"}}/>} />
+        <Route path="/pokemons/create" element={<FormPokemon props={{req:"create"}}/>} />
         <Route path="/teams" element={<Teams/>} />
         <Route path="/teams/create" element={<CreateTeam/>} />
         <Route path="/teams/update/:id" element={<UpdateTeam/>} />

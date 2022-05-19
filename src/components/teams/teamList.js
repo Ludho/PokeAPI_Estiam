@@ -1,6 +1,6 @@
 import React from 'react';
 import TeamCard from './TeamCard';
-import { NavLink  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const TeamsList = ({ props }) => {
     const TeamJSX = [];
@@ -19,16 +19,17 @@ const TeamsList = ({ props }) => {
             {TeamJSX}
 
             <div className='col-md-4' style={{ padding: "5px" }}>
-                <NavLink to={"create"}>
-                    <div style={{ backgroundColor: "white", padding: "10px" }} className="rounded shadow team-card">
+
+                <div style={{ padding: "10px" }} >
+                    <NavLink to={"create"}>
                         <img
                             alt="buttonSelectPokemon"
                             src={process.env.REACT_APP_LOCALAPI + "/Asset/AddButton.png"}
-                            className="img-fluid"
+                            className="img-fluid hover"
                             style={{ padding: "10px" }}
                         />
-                    </div>
-                </NavLink>
+                    </NavLink>
+                </div>
             </div>
         </div>
     </>

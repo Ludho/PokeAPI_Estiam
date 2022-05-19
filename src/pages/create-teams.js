@@ -7,6 +7,7 @@ import PokemonList from '../components/pokemons/PokemonList';
 import {BiX} from "react-icons/bi";
 import Form from "../components/utils/Form"
 import {AiOutlinePlusCircle} from "react-icons/ai"
+import GoBack from "../components/utils/GoBack"
 
 const CreateTeam = () => {
 
@@ -45,7 +46,7 @@ const CreateTeam = () => {
 
     const createTeam = () => {
 
-        const team = { name: name, pokemons: pokemons };
+        const team = {name: name, pokemons: pokemons };
         axios.post(process.env.REACT_APP_LOCALAPI + '/teams', team).then(navigate(-1))
 
     }
@@ -81,6 +82,7 @@ const CreateTeam = () => {
 
     return (
         <>
+            <GoBack/>
             <div className='justify-content-center'>
                 <div className='flex'>
                   <input maxlength="15" placeholder='Team name' onChange={handleChange}></input>

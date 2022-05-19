@@ -4,9 +4,7 @@ const Type = ({type}) =>  {
 
     
     return <>
-        <div className="col-6 value" style={{padding:"2px"}}>
             <p className='text-center' style={{background: getBackgroundColor(type), margin:"2px" ,borderRadius: "20px", border: "solid",borderWidth:"1px",color:"white", fontWeight:"bold"}}>{type}</p>
-        </div>
     </>
 
 } 

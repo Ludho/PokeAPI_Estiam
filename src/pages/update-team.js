@@ -9,6 +9,7 @@ import { BiX } from "react-icons/bi";
 import Form from "../components/utils/Form"
 import {MdCreate} from "react-icons/md"
 import {AiFillDelete} from "react-icons/ai"
+import GoBack from "../components/utils/GoBack"
 
 const UpdateTeam = () => {
 
@@ -103,6 +104,7 @@ const UpdateTeam = () => {
         <>
             {pokemons.length > 0 &&
                 <>
+                    <GoBack/>
                     <div className='justify-content-center'>
                         <div className='' style={{margin:"10px 0 10px 0"}}>
                             <input className="h3" maxlength="15" value={name} placeholder='Team name' onChange={handleChange}></input>

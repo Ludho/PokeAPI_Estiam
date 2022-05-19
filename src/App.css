@@ -19,16 +19,31 @@ button:hover{
     background-color: whitesmoke;
 }
 
+.hover:hover{
+  transform: translate3d(0px, -1px, 0px);
+}
 .pokemon-card:hover{
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
     transform: translate3d(0px, -1px, 0px);
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 .pokemon-card:hover{
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
     transform: translate3d(0px, -1px, 0px);
     background-color: whitesmoke;
+}
+
+.goBack{
+  font-weight: bold; 
+  font-size: large;
+  color: red;
+}
+
+.goBack:hover{
+  transform: translate3d(0px, -1px, 0px);
+  cursor: pointer;
 }
 
 .svg:hover{
