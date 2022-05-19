@@ -4,7 +4,7 @@ import "./PokemonInfo.css"
 import Button from "react-bootstrap/Button"
 import Slider from '@mui/material/Slider';
 
-const PokemonFormInfo = ({ props, handleChange, handleSave, handleDelete, }) => {
+const PokemonFormInfo = ({ props,req , handleChange, handleSave, handleDelete, }) => {
 
     const handleChangeChild = (e, type, to) => {
     
@@ -93,7 +93,7 @@ const PokemonFormInfo = ({ props, handleChange, handleSave, handleDelete, }) => 
             </section>
             <div className='text-center' style={{ padding: "10px" }}>
                 <Button style={{ margin: "5px" }} onClick={handleSave}>SAVE</Button>
-                <Button style={{ margin: "5px" }} variant="danger" onClick={handleDelete}>DELETE</Button>
+                <Button style={{ margin: "5px" ,display:req==="create"?"none":"inline"}} variant="danger" onClick={handleDelete}>DELETE</Button>
             </div>
 
         </div>

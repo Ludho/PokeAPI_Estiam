@@ -4,7 +4,7 @@ import { getBackgroundColor } from "../../utils/function"
 
 const PokemonCard = ({ props, handleClick }) => {
 
-
+    
     return <>
         <div className='col-md-2 col-sm-3 col-6' onClick={() => handleClick(props.pokemon)}>
 
@@ -12,7 +12,7 @@ const PokemonCard = ({ props, handleClick }) => {
 
                 <LazyLoadImage
                     alt={props.pokemon.name.english}
-                    src={process.env.REACT_APP_LOCALAPI + `/Asset/${(props.pokemon.id).toString().padStart(3, "0")}.png`}
+                    src={process.env.REACT_APP_LOCALAPI + `/Asset/${props.pokemon.id<=809?(props.pokemon.id).toString().padStart(3, "0"):"000"}.png`}
                     className="img-fluid"
                     style={{ padding: "20px", borderRadius: "10px 10px 0 0", backgroundColor: getBackgroundColor(props.pokemon.type[0]) }}
                 />

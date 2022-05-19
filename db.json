@@ -16533,6 +16533,24 @@
         "Sp. Defense": 65,
         "Speed": 34
       }
+    },
+    {
+      "name": {
+        "english": "TEST",
+        "japanese": ""
+      },
+      "base": {
+        "HP": 52,
+        "Attack": 50,
+        "Defense": 60,
+        "Sp. Attack": 27,
+        "Sp. Defense": 24,
+        "Speed": 150
+      },
+      "type": [
+        "Fire"
+      ],
+      "id": 810
     }
   ],
   "teams": [

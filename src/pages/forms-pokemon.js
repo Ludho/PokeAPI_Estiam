@@ -12,7 +12,7 @@ const FormPokemon = ({ props }) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState(null);
     const [hasError, setError] = useState(false);
-    const [name, setName] = useState("");
+    const [name, setName] = useState("???");
     const [displayName, setDisplayName] = useState("");
     const [type, setType] = useState([]);
     const [atk, setAtk] = useState(10);
@@ -22,7 +22,7 @@ const FormPokemon = ({ props }) => {
     const [spDef, setSpDef] = useState(10);
     const [spd, setSpd] = useState(10);
     const navigate = useNavigate();
-    
+
     let { id } = useParams();
 
     const fetchApi = async () => {
@@ -50,7 +50,8 @@ const FormPokemon = ({ props }) => {
     };
 
     useEffect(() => {
-        if (props.req == "update" && isLoading) {fetchApi()};
+        if (props.req == "update" && isLoading) { fetchApi() };
+
         setData({
             name: {
                 english: name,
@@ -65,12 +66,13 @@ const FormPokemon = ({ props }) => {
                 Speed: spd,
             },
             type: type,
-            id: id
+            id: id?id:0
         })
-        
-    }, [name,atk,def,spAtk,spDef,hp,spd,type]);
+        setLoading(false)
 
-    
+    }, [name, atk, def, spAtk, spDef, hp, spd, type]);
+
+
 
     const handleChange = (e) => {
         switch (e.target.name) {
@@ -106,15 +108,16 @@ const FormPokemon = ({ props }) => {
                 break;
         }
 
-        
+
     }
 
-    const handleSave = ()=>{
-        if(props.req=="update") updatePokemon()
+    const handleSave = () => {
+        if (props.req == "update") updatePokemon();
+        if (props.req == "create") createPokemon();
     }
 
     const updatePokemon = () => {
-        const pokemon = { 
+        const pokemon = {
             name: {
                 english: name,
                 japanese: displayName
@@ -128,8 +131,8 @@ const FormPokemon = ({ props }) => {
                 Speed: spd,
             },
             type: type
-         };
-        axios.put(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id, pokemon).then(navigate({pathname:"/pokemons"}))
+        };
+        axios.put(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id, pokemon).then(navigate({ pathname: "/pokemons" }))
     }
 
     const deletePokemon = () => {
@@ -137,7 +140,7 @@ const FormPokemon = ({ props }) => {
     }
 
     const createPokemon = () => {
-        const pokemon = { 
+        const pokemon = {
             name: {
                 english: name,
                 japanese: displayName
@@ -151,7 +154,7 @@ const FormPokemon = ({ props }) => {
                 Speed: spd,
             },
             type: type
-         };
+        };
         axios.post(process.env.REACT_APP_LOCALAPI + '/pokemons/', pokemon).then(navigate("/pokemons"))
     }
 
@@ -159,20 +162,22 @@ const FormPokemon = ({ props }) => {
 
     return (
         <>
-            {isLoading ? (
+            {isLoading &&
                 <PacmanLoader />
-            ) : (
-                <>
-                    <GoBack props={"/pokemons/"+id}/>
-                    <div className='container-fluid'>
-                        <div className='row shadow' style={{ postion:"relative", height: "75vh", borderRadius: "20px" }}>
-                            <PokemonImg props={data} />
-                            <PokemonFormInfo props={data} handleChange={handleChange} handleSave={handleSave} handleDelete={deletePokemon}/>
-                            
-                        </div>
-                    </div>
-                </>
-            )}
+            }
+            {data &&
+                                <>
+                                <GoBack props={props.req==="create"?"/pokemons":"/pokemons/"+id} />
+                                <div className='container-fluid'>
+                                    <div className='row shadow' style={{ postion: "relative", height: "75vh", borderRadius: "20px" }}>
+                                        <PokemonImg props={data} />
+                                        <PokemonFormInfo props={data} req={props.req} handleChange={handleChange} handleSave={handleSave} handleDelete={deletePokemon} />
+                                    </div>
+                                </div>
+                            </>
+            }
+
+
         </>
     );
 };
