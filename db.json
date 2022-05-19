@@ -1,59 +1,26 @@
 {
   "pokemons": [
     {
-      "id": 1,
       "name": {
         "english": "Bulbasaur",
-        "japanese": "フシギダネ",
-        "chinese": "妙蛙种子",
-        "french": "Bulbizarre"
+        "japanese": "フシギダネ"
       },
-      "type": [
-        "Grass",
-        "Poison"
-      ],
       "base": {
         "HP": 45,
         "Attack": 49,
-        "Defense": 49,
+        "Defense": 98,
         "Sp. Attack": 65,
         "Sp. Defense": 65,
         "Speed": 45
-      }
+      },
+      "type": [],
+      "id": 1
     },
     {
-      "id": 2,
       "name": {
-        "english": "Ivysaur",
-        "japanese": "フシギソウ",
-        "chinese": "妙蛙草",
-        "french": "Herbizarre"
+        "english": "Ivysauf",
+        "japanese": "フシギバナ"
       },
-      "type": [
-        "Grass",
-        "Poison"
-      ],
-      "base": {
-        "HP": 60,
-        "Attack": 62,
-        "Defense": 63,
-        "Sp. Attack": 80,
-        "Sp. Defense": 80,
-        "Speed": 60
-      }
-    },
-    {
-      "id": 3,
-      "name": {
-        "english": "Venusaur",
-        "japanese": "フシギバナ",
-        "chinese": "妙蛙花",
-        "french": "Florizarre"
-      },
-      "type": [
-        "Grass",
-        "Poison"
-      ],
       "base": {
         "HP": 80,
         "Attack": 82,
@@ -61,27 +28,11 @@
         "Sp. Attack": 100,
         "Sp. Defense": 100,
         "Speed": 80
-      }
-    },
-    {
-      "id": 4,
-      "name": {
-        "english": "Charmander",
-        "japanese": "ヒトカゲ",
-        "chinese": "小火龙",
-        "french": "Salamèche"
       },
       "type": [
         "Fire"
       ],
-      "base": {
-        "HP": 39,
-        "Attack": 52,
-        "Defense": 43,
-        "Sp. Attack": 60,
-        "Sp. Defense": 50,
-        "Speed": 65
-      }
+      "id": 3
     },
     {
       "id": 5,
@@ -125,24 +76,22 @@
       }
     },
     {
-      "id": 7,
       "name": {
-        "english": "Squirtle",
-        "japanese": "ゼニガメ",
-        "chinese": "杰尼龟",
-        "french": "Carapuce"
+        "english": "Tortle",
+        "japanese": "ゼニガメ"
       },
-      "type": [
-        "Water"
-      ],
       "base": {
         "HP": 44,
-        "Attack": 48,
+        "Attack": 136,
         "Defense": 65,
         "Sp. Attack": 50,
         "Sp. Defense": 64,
         "Speed": 43
-      }
+      },
+      "type": [
+        "Normal"
+      ],
+      "id": 7
     },
     {
       "id": 8,
@@ -16637,7 +16586,11 @@
           ]
         },
         {
-          "id": 0
+          "id": 3,
+          "name": "Ivysauf",
+          "type": [
+            "Poison"
+          ]
         },
         {
           "id": 5,
@@ -16647,7 +16600,11 @@
           ]
         },
         {
-          "id": 0
+          "id": 3,
+          "name": "Ivysauf",
+          "type": [
+            "Fairy"
+          ]
         },
         {
           "id": 0

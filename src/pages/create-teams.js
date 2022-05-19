@@ -82,7 +82,7 @@ const CreateTeam = () => {
 
     return (
         <>
-            <GoBack/>
+            <GoBack props={"/teams"}/>
             <div className='justify-content-center'>
                 <div className='flex'>
                   <input maxlength="15" placeholder='Team name' onChange={handleChange}></input>

@@ -13,14 +13,11 @@ const PokemonFormInfo = ({ props, handleChange, handleSave, handleDelete, }) => 
         switch(e){
             case "add":
                 newState.push(type);
-
             break;
             case "delete":
-                newState=newState.map((elem) => {
-                    if(elem != type ){
-                        return elem ;
-                    }
-                  });
+
+                newState.splice(to, 1);
+
             break;
             case "update":
                 newState[to]=type;
@@ -46,7 +43,7 @@ const PokemonFormInfo = ({ props, handleChange, handleSave, handleDelete, }) => 
             <section className='infos'>
                 <div className='row'>
                     <div className="col-4 titre">Name</div>
-                    <input className="col-6 value" name="name" style={{ marginLeft: "5px" }} value={props.name.english} onChange={handleChange}></input>
+                    <input className="col-6 value" name="name" style={{ marginLeft: "5px" }}  onChange={handleChange}></input>
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">Type</div>

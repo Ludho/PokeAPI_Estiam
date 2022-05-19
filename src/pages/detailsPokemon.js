@@ -47,7 +47,7 @@ const DetailsPokemon = (props) => {
         <PacmanLoader />
       ) : (
         <>
-          <GoBack />
+          <GoBack props={"/pokemons"}/>
           <div className='container-fluid'>
             <div className='row shadow' style={{ position: "relative", height: "75vh", borderRadius: "20px" }}>
               <PokemonImg props={data} />

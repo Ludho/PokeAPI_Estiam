@@ -50,8 +50,25 @@ const FormPokemon = ({ props }) => {
     };
 
     useEffect(() => {
-        if (props.req == "update" && isLoading) fetchApi();
-    }, []);
+        if (props.req == "update" && isLoading) {fetchApi()};
+        setData({
+            name: {
+                english: name,
+                japanese: displayName
+            },
+            base: {
+                HP: hp,
+                Attack: atk,
+                Defense: def,
+                "Sp. Attack": spAtk,
+                "Sp. Defense": spDef,
+                Speed: spd,
+            },
+            type: type,
+            id: id
+        })
+        
+    }, [name,atk,def,spAtk,spDef,hp,spd,type]);
 
     
 
@@ -64,11 +81,10 @@ const FormPokemon = ({ props }) => {
                 setDisplayName(e.target.value)
                 break;
             case "type":
-                console.log(e.value)
-                setType(e.value)
+                setType([...e.value])
                 break;
             case "atk":
-                console.log(e.target)
+
                 setAtk(e.target.value)
                 break;
             case "def":
@@ -89,22 +105,8 @@ const FormPokemon = ({ props }) => {
             default:
                 break;
         }
-        setData({
-            name: {
-                english: name,
-                japanese: displayName
-            },
-            base: {
-                HP: hp,
-                Attack: atk,
-                Defense: def,
-                "Sp. Attack": spAtk,
-                "Sp. Defense": spDef,
-                Speed: spd,
-            },
-            type: type,
-            id: data.id
-        })
+
+        
     }
 
     const handleSave = ()=>{
@@ -125,14 +127,32 @@ const FormPokemon = ({ props }) => {
                 "Sp. Defense": spDef,
                 Speed: spd,
             },
-            type: type,
-            id: data.id
+            type: type
          };
-        axios.put(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id, pokemon).then(navigate({pathname:"/pokemons/"+id}))
+        axios.put(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id, pokemon).then(navigate({pathname:"/pokemons"}))
     }
 
     const deletePokemon = () => {
-        axios.delete(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id).then(window.history.back().back())
+        axios.delete(process.env.REACT_APP_LOCALAPI + '/pokemons/' + id).then(navigate("/pokemons"))
+    }
+
+    const createPokemon = () => {
+        const pokemon = { 
+            name: {
+                english: name,
+                japanese: displayName
+            },
+            base: {
+                HP: hp,
+                Attack: atk,
+                Defense: def,
+                "Sp. Attack": spAtk,
+                "Sp. Defense": spDef,
+                Speed: spd,
+            },
+            type: type
+         };
+        axios.post(process.env.REACT_APP_LOCALAPI + '/pokemons/', pokemon).then(navigate("/pokemons"))
     }
 
     if (hasError) return <p>Une erreur est survenue...</p>;
@@ -143,7 +163,7 @@ const FormPokemon = ({ props }) => {
                 <PacmanLoader />
             ) : (
                 <>
-                    <GoBack />
+                    <GoBack props={"/pokemons/"+id}/>
                     <div className='container-fluid'>
                         <div className='row shadow' style={{ postion:"relative", height: "75vh", borderRadius: "20px" }}>
                             <PokemonImg props={data} />

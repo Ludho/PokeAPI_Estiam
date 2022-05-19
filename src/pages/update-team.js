@@ -104,7 +104,7 @@ const UpdateTeam = () => {
         <>
             {pokemons.length > 0 &&
                 <>
-                    <GoBack/>
+                    <GoBack props={"/teams"}/>
                     <div className='justify-content-center'>
                         <div className='' style={{margin:"10px 0 10px 0"}}>
                             <input className="h3" maxlength="15" value={name} placeholder='Team name' onChange={handleChange}></input>

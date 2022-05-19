@@ -16,7 +16,7 @@ export const getTextColor = (type) => {
 
         case "Poison":
 
-            return "#A040A0";
+            return "#CF9FCF";
 
         case "Flying":
 
@@ -98,7 +98,7 @@ export const getBackgroundColor = (type) => {
 
         case "Poison":
 
-            return "#CF9FCF";
+            return "#A040A0";
 
         case "Flying":
 
