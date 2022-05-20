@@ -1,26 +1,59 @@
 {
   "pokemons": [
     {
+      "id": 1,
       "name": {
         "english": "Bulbasaur",
-        "japanese": "フシギダネ"
+        "japanese": "フシギダネ",
+        "chinese": "妙蛙种子",
+        "french": "Bulbizarre"
       },
+      "type": [
+        "Grass",
+        "Poison"
+      ],
       "base": {
         "HP": 45,
         "Attack": 49,
-        "Defense": 98,
+        "Defense": 49,
         "Sp. Attack": 65,
         "Sp. Defense": 65,
         "Speed": 45
-      },
-      "type": [],
-      "id": 1
+      }
     },
     {
+      "id": 2,
       "name": {
-        "english": "Ivysauf",
-        "japanese": "フシギバナ"
+        "english": "Ivysaur",
+        "japanese": "フシギソウ",
+        "chinese": "妙蛙草",
+        "french": "Herbizarre"
       },
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "base": {
+        "HP": 60,
+        "Attack": 62,
+        "Defense": 63,
+        "Sp. Attack": 80,
+        "Sp. Defense": 80,
+        "Speed": 60
+      }
+    },
+    {
+      "id": 3,
+      "name": {
+        "english": "Venusaur",
+        "japanese": "フシギバナ",
+        "chinese": "妙蛙花",
+        "french": "Florizarre"
+      },
+      "type": [
+        "Grass",
+        "Poison"
+      ],
       "base": {
         "HP": 80,
         "Attack": 82,
@@ -28,11 +61,27 @@
         "Sp. Attack": 100,
         "Sp. Defense": 100,
         "Speed": 80
+      }
+    },
+    {
+      "id": 4,
+      "name": {
+        "english": "Charmander",
+        "japanese": "ヒトカゲ",
+        "chinese": "小火龙",
+        "french": "Salamèche"
       },
       "type": [
         "Fire"
       ],
-      "id": 3
+      "base": {
+        "HP": 39,
+        "Attack": 52,
+        "Defense": 43,
+        "Sp. Attack": 60,
+        "Sp. Defense": 50,
+        "Speed": 65
+      }
     },
     {
       "id": 5,
@@ -76,22 +125,24 @@
       }
     },
     {
+      "id": 7,
       "name": {
-        "english": "Tortle",
-        "japanese": "ゼニガメ"
+        "english": "Squirtle",
+        "japanese": "ゼニガメ",
+        "chinese": "杰尼龟",
+        "french": "Carapuce"
       },
+      "type": [
+        "Water"
+      ],
       "base": {
         "HP": 44,
-        "Attack": 136,
+        "Attack": 48,
         "Defense": 65,
         "Sp. Attack": 50,
         "Sp. Defense": 64,
         "Speed": 43
-      },
-      "type": [
-        "Normal"
-      ],
-      "id": 7
+      }
     },
     {
       "id": 8,
@@ -16533,24 +16584,6 @@
         "Sp. Defense": 65,
         "Speed": 34
       }
-    },
-    {
-      "name": {
-        "english": "TEST",
-        "japanese": ""
-      },
-      "base": {
-        "HP": 52,
-        "Attack": 50,
-        "Defense": 60,
-        "Sp. Attack": 27,
-        "Sp. Defense": 24,
-        "Speed": 150
-      },
-      "type": [
-        "Fire"
-      ],
-      "id": 810
     }
   ],
   "teams": [
@@ -16594,7 +16627,7 @@
       "id": 1
     },
     {
-      "name": "default",
+      "name": "default name",
       "pokemons": [
         {
           "id": 4,
@@ -16604,11 +16637,7 @@
           ]
         },
         {
-          "id": 3,
-          "name": "Ivysauf",
-          "type": [
-            "Poison"
-          ]
+          "id": 0
         },
         {
           "id": 5,
@@ -16618,11 +16647,7 @@
           ]
         },
         {
-          "id": 3,
-          "name": "Ivysauf",
-          "type": [
-            "Fairy"
-          ]
+          "id": 0
         },
         {
           "id": 0
@@ -16704,15 +16729,13 @@
       ]
     },
     {
-      "id": 5,
       "name": "default name",
       "pokemons": [
         {
-          "id": 2,
-          "name": "Ivysaur",
+          "id": 28,
+          "name": "Sandslash",
           "type": [
-            "Grass",
-            "Poison"
+            "Ground"
           ]
         },
         {
@@ -16730,7 +16753,8 @@
         {
           "id": 0
         }
-      ]
+      ],
+      "id": 5
     }
   ]
 }

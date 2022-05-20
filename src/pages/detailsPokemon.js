@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 import PokemonInfo from "../components/pokemons/PokemonInfo"
 import PokemonImg from "../components/pokemons/PokemonImg"
-import PacmanLoader from "react-spinners/PacmanLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 import GoBack from "../components/utils/GoBack"
 
 
@@ -44,7 +44,9 @@ const DetailsPokemon = (props) => {
   return (
     <>
       {isLoading ? (
-        <PacmanLoader />
+          <div className='d-flex align-items-center justify-content-center' style={{ height: "50vh" }}>
+          <RiseLoader color="red" size={50} />
+        </div>
       ) : (
         <>
           <GoBack props={"/pokemons"}/>

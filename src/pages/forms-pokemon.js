@@ -50,7 +50,7 @@ const FormPokemon = ({ props }) => {
     };
 
     useEffect(() => {
-        if (props.req == "update" && isLoading) { fetchApi() };
+        if (props.req === "update" && isLoading) { fetchApi() };
 
         setData({
             name: {
@@ -70,7 +70,7 @@ const FormPokemon = ({ props }) => {
         })
         setLoading(false)
 
-    }, [name, atk, def, spAtk, spDef, hp, spd, type]);
+    }, [name, atk, def, spAtk, spDef, hp, spd, type,displayName,id,]);
 
 
 
@@ -112,8 +112,8 @@ const FormPokemon = ({ props }) => {
     }
 
     const handleSave = () => {
-        if (props.req == "update") updatePokemon();
-        if (props.req == "create") createPokemon();
+        if (props.req === "update") updatePokemon();
+        if (props.req === "create") createPokemon();
     }
 
     const updatePokemon = () => {

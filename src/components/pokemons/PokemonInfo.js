@@ -21,7 +21,7 @@ const PokemonInfo = ({ props, handleChange }) => {
                     <div className="col-4 titre">Type</div>
                     <div className='col-8 row'>
                         {props.type.map((type) => {
-                            return <div className='col-6 value' style={{padding:"2px"}}><Type type={type}/></div>
+                            return <div key={type} className='col-6 value' style={{padding:"2px"}}><Type type={type}/></div>
                         })}
                     </div>
                 </div>

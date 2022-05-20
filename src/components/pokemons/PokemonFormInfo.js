@@ -57,37 +57,37 @@ const PokemonFormInfo = ({ props,req , handleChange, handleSave, handleDelete, }
                 <div className='row'>
                     <div className="col-4 titre">Attack</div>
                     <div className="col-1 value">{props.base.Attack}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base.Attack} name="atk" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base.Attack} name="atk" onChange={handleChange}></Slider></div>
 
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">Defense</div>
                     <div className="col-1 value">{props.base.Defense}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base.Defense} name="def" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base.Defense} name="def" onChange={handleChange}></Slider></div>
 
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">HP</div>
                     <div className="col-1 value">{props.base.HP}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base.HP} name="hp" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base.HP} name="hp" onChange={handleChange}></Slider></div>
 
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">Sp. Attack</div>
                     <div className="col-1 value">{props.base["Sp. Attack"]}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base["Sp. Attack"]} name="spAtk" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base["Sp. Attack"]} name="spAtk" onChange={handleChange}></Slider></div>
 
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">Sp. Defense</div>
                     <div className="col-1 value">{props.base["Sp. Defense"]}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base["Sp. Defense"]} name="spDef" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base["Sp. Defense"]} name="spDef" onChange={handleChange}></Slider></div>
 
                 </div>
                 <div className='row'>
                     <div className="col-4 titre">Speed</div>
                     <div className="col-1 value">{props.base.Speed}</div>
-                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} defaultValue={props.base.Speed} name="spd" onChange={handleChange}></Slider></div>
+                    <div className="col-5 hover"><Slider key="atk" min={1} max={200} value={props.base.Speed} name="spd" onChange={handleChange}></Slider></div>
 
                 </div>
             </section>
