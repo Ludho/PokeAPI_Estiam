@@ -7,9 +7,9 @@ import PokemonList from '../components/pokemons/PokemonList';
 import { useParams } from "react-router-dom";
 import { BiX } from "react-icons/bi";
 import Form from "../components/utils/Form"
-import {MdCreate} from "react-icons/md"
 import {AiFillDelete} from "react-icons/ai"
 import GoBack from "../components/utils/GoBack"
+import Button from "react-bootstrap/Button"
 
 const UpdateTeam = () => {
 
@@ -108,7 +108,7 @@ const UpdateTeam = () => {
                     <div className='justify-content-center'>
                         <div className='' style={{margin:"10px 0 10px 0"}}>
                             <input className="h3" maxlength="15" value={name} placeholder='Team name' onChange={handleChange}></input>
-                            <MdCreate className="svg" size={32} color="red" onClick={updateTeam} />
+                            <Button variant="danger" style={{ margin: "0 8px 8px 8px" }} onClick={updateTeam}>SAVE</Button>
                             <AiFillDelete className="svg " size={32} onClick={deleteTeam}/>
                         </div>
                         <ChoosePokemon props={{ pokemons: pokemons }} handlePick={handlePick} handleDelete={handleDeletePick} />
