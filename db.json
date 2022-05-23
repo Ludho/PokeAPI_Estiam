@@ -16698,63 +16698,6 @@
         }
       ],
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "default name",
-      "pokemons": [
-        {
-          "id": 1,
-          "name": "Bulbasaur",
-          "type": [
-            "Grass",
-            "Poison"
-          ]
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        }
-      ]
-    },
-    {
-      "name": "default name",
-      "pokemons": [
-        {
-          "id": 28,
-          "name": "Sandslash",
-          "type": [
-            "Ground"
-          ]
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        },
-        {
-          "id": 0
-        }
-      ],
-      "id": 5
     }
   ]
 }
