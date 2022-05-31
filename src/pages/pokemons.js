@@ -6,7 +6,7 @@ import RiseLoader from "react-spinners/RiseLoader";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import {AiOutlinePlusCircle} from "react-icons/ai"
+import {AiOutlinePlusCircle, AiOutlineArrowUp} from "react-icons/ai"
 
 const Pokemons = () => {
 
@@ -35,6 +35,13 @@ const Pokemons = () => {
     fetchApi();
   }, []);
 
+
+  const goToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+  };
 
   const handleChange = (e) => {
     setFilter(e.target.value);
@@ -67,6 +74,8 @@ const Pokemons = () => {
           <PokemonList props={{ pokemons: constfilterData(data, filter) }} handleClick={handleClick} />
         )}
       </div>
+      
+      <AiOutlineArrowUp className='svg' size={32} style={{position:"fixed", bottom:32, right:32}} onClick={goToTop}/>
     </>
   );
 };
